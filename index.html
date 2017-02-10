@@ -4,20 +4,16 @@
     <link rel="stylesheet" href="styles.css"> </head>
 
 <body>
-    
-    <div id="container">        
-        
-        <div><a onclick="plusImage(-1)">Prev</a> <a onclick="plusImage(1)">Next</a></div>
-        <div class="spotlight-container">
-            <img id="spotlight">
-            <div class="spotlight-box">
-                <img id="batman">
-            </div>
-            
-        </div>
-        <img id="gotham-skyline">
-    </div>
-    
+    <div id="container"> 
+        <a class="prev" onclick="plusImage(-1)"><img src="svgs/bat17.svg"></a> 
+        <a class="next" onclick="plusImage(1)"><img src="svgs/bat17.svg"></a>
+        <div class="info-container">
+            <h1 id="year"></h1>
+            <h2 id="logoTitle"></h2>
+            <h3 id="desc"></h3> </div>
+        <div class="spotlight-container"> <img id="spotlight">
+            <div class="spotlight-box"> <img id="batman"> </div>
+        </div> <img id="gotham-skyline"> </div>
     <script src="js/TweenMax.min.js"></script>
     <script src="js/snap.svg-min.js"></script>
     <script src="js/myjs.js"></script>
