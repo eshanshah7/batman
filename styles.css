@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #3F3E3E;
+    background-color: black;
     user-select: none;
     overflow-y: hidden;
     
@@ -14,6 +14,7 @@ h1 {
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(80px);
+    text-shadow: #FBB74B 0px 2px 8px;
 }
 h2 {
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
@@ -23,6 +24,7 @@ h2 {
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(120px);
+    text-shadow: #FBB74B 0px 1px 8px;
 }
 h3 {
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
@@ -32,6 +34,7 @@ h3 {
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(60px);
+    text-shadow: #FBB74B 0px 2px 8px;
 }
 .arrowshide{
     display: none;
@@ -41,7 +44,9 @@ h3 {
     
 }
 #container{
-    border: 10px solid black;
+    background-color: #3F3E3E;
+    background: linear-gradient(black, #3F3E3E);
+    border: 10px solid #655741;
     position: relative;
     top: 50%;
     left: 50%;
@@ -49,6 +54,7 @@ h3 {
     height: 600px;
     margin: -300px 0 0 -512px;
     text-align: center;
+    z-index: 0;
 }
 
 .info-container{
@@ -112,7 +118,7 @@ h3 {
 
 #dots {
     position: absolute;
-    bottom: 0px;
+    bottom: 10px;
     width: 100%;
     z-index: 5;
     text-align: center;
@@ -171,7 +177,7 @@ h3 {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 44px;
+    bottom: 200px;
     width: 50px;
     margin-top: -22px;
     padding: 16px;
@@ -181,8 +187,9 @@ h3 {
     transition: 0.6s ease;
     border-radius: 3px;
     user-select: none;
+    z-index: 100;
+    
 }
-
 
 /* Position the buttons to the left and right */
 .prev{    

@@ -278,7 +278,7 @@ function animate(n) {
         , left: 0
     })).add(TweenLite.fromTo(infoContainer[0], 0.1, {
         opacity: 0
-        , right: -20
+        , right: 0
     }, {
         opacity: 1
         , right: 120
@@ -327,7 +327,7 @@ function showImage(n) {
         , left: 0
     }),0).add(TweenLite.to(infoContainer[0], 0.1, {
         opacity: 0
-        , right: -20
+        , right: 0
     }), 0);
     tlGlitch.kill();
     setTimeout(function () {
