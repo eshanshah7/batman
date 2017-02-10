@@ -28,6 +28,13 @@ h3 {
 	font-weight: 500;
 	line-height: 26.4px;
 }
+.arrowshide{
+    display: none;
+}
+.arrowsshow{
+    display: block;
+    
+}
 #container{
     border: 10px solid black;
     position: relative;
@@ -59,6 +66,26 @@ h3 {
     height: 500px;
     width: 500px;
     bottom: 0px;
+}
+
+#cloud{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1024;
+    height:600;
+    background-image: url(images/cloud.png);
+    background-size:1024px 600px;
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    opacity:0.2;
+    z-index: -1;
+    animation: animatedBackground 30s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0px; }
+	to { background-position: -1024px 0px; }
 }
 
 #batman{

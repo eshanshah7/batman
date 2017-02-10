@@ -68,7 +68,8 @@ function imgLoad(url) {
 function loadImages() {
     dataLoad().then(function (response) {
         allData = JSON.parse(response);
-        for(let i = 0;i<allData.logodata.length;i++){
+        setTimeout(function(){
+            for(let i = 0;i<allData.logodata.length;i++){
             
             //Add dots
             var dots = document.createElement('span');
@@ -78,8 +79,10 @@ function loadImages() {
             dots.dataset.tooltip = allData.logodata[i].year;
             dots.setAttribute('onclick', 'currentImage(' + (i + 1) + ')');;
             document.getElementById('dots').appendChild(dots);
-            
-        }
+            }
+            document.getElementById('arrows').setAttribute('class','arrowsshow');
+        },2000);
+        
         
     });
     imgLoad('svgs/gothamSkyline.svg').then(function (response) {
@@ -147,6 +150,7 @@ function loadImages() {
         }, {
             rotation: 30
             , height: 500
+            ,delay:2
         });
         TweenMax.fromTo(spotlight, 4, {
             opacity: 0.5
@@ -162,8 +166,21 @@ function loadImages() {
                 , clamp: true
             })
             , repeat: -1
+            ,delay:2
         });
-        animate(0);
+        setTimeout(function(){
+            animate(0);    
+        },2000);
+        
+    }).then(function(){
+        document.addEventListener("mousewheel",function(event){
+        if(event.deltaY == 125){
+            plusImage(1);
+        }
+            else{
+                plusImage(-1);
+            }
+});
     })
 }
 var gotham = document.getElementById('gotham-skyline');

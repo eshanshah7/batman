@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="styles.css"> </head>
 
 <body>
-    <div id="container"> 
+    <div id="container">
+        <div id="arrows" class="arrowshide">
         <a class="prev" onclick="plusImage(-1)"><img src="svgs/bat17.svg"></a> 
         <a class="next" onclick="plusImage(1)"><img src="svgs/bat17.svg"></a>
+        </div>
         <div class="info-container">
             <h1 id="year"></h1>
             <h2 id="logoTitle"></h2>
@@ -21,7 +23,9 @@
         <div id="dots"> 
         
         </div>
-        <img id="gotham-skyline"> 
+        <img id="cloud">
+        <img id="gotham-skyline">
+        
     </div>
     <script src="js/TweenMax.min.js"></script>
     <script src="js/snap.svg-min.js"></script>
