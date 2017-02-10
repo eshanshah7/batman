@@ -14,7 +14,7 @@ h1 {
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(80px);
-    text-shadow: #FBB74B 0px 2px 8px;
+    text-shadow: #FBB74B 0px 0px 8px;
 }
 h2 {
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
@@ -24,7 +24,7 @@ h2 {
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(120px);
-    text-shadow: #FBB74B 0px 1px 8px;
+    text-shadow: #FBB74B 0px 0px 10px;
 }
 h3 {
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
@@ -34,7 +34,7 @@ h3 {
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(60px);
-    text-shadow: #FBB74B 0px 2px 8px;
+    text-shadow: #FBB74B 0px 0px 8px;
 }
 .arrowshide{
     display: none;
@@ -148,13 +148,13 @@ h3 {
 .bottom {
 
    font-size:100px;
-  -webkit-clip-path: inset(58% 0 0 0);
-  clip-path: inset(58% 0 0 0);
+  -webkit-clip-path: inset(47% 0 0 0);
+  clip-path: inset(47% 0 0 0);
 }
 
 .top {
-   -webkit-clip-path: inset(0 0 41% 0);
-  clip-path: inset(0 0 41%);
+   -webkit-clip-path: inset(0 0 52% 0);
+  clip-path: inset(0 0 52% 0);
 }
 
 #spotlight{

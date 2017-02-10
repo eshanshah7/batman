@@ -112,24 +112,12 @@ function loadImages() {
     }).to('.glitch', 0.04, {
         x: 0
     }).add("split", 0).to('.top', 0.5, {
-        x: -10
+        x: -2
         , ease: Power4.easeInOut
     }, 'split').to('.bottom', 0.5, {
-        x: 10
+        x: 2
         , ease: Power4.easeInOut
-    }, 'split').to('.glitch', 0.08, {
-        className: '+=redShadow'
-    }, 'split').to('#txt', 0, {
-        scale: 1.1
-    }, 'split').to('#txt', 0, {
-        scale: 1
-    }, "+=0.02").to('.glitch', 0.08, {
-        className: '-=redShadow'
-    }, "+=0.09").to('.glitch', 0.03, {
-        className: '+=greenShadow'
-    }, 'split').to('.glitch', 0.03, {
-        className: '-=greenShadow'
-    }, "+=0.01").to('.top', 0.2, {
+    }, 'split').to('.top', 0.2, {
         x: 0
         , ease: Power4.easeInOut
     }).to('.bottom', 0.2, {
@@ -262,7 +250,7 @@ function animate(n) {
         , opacity: 1
         , bottom: 50
         , left: 0
-    })).add(TweenLite.fromTo(batman2, 0.1, {
+    }),0).add(TweenLite.fromTo(batman2, 0.1, {
         rotation: 0
         , width: 190
         , height: 0
@@ -276,14 +264,14 @@ function animate(n) {
         , opacity: 1
         , bottom: 50
         , left: 0
-    })).add(TweenLite.fromTo(infoContainer[0], 0.1, {
+    }),0).add(TweenLite.fromTo(infoContainer[0], 0.1, {
         opacity: 0
         , right: 0
     }, {
         opacity: 1
         , right: 120
     }));
-    tlGlitch.restart();
+    tlGlitch.resume();
    
     
 }
@@ -329,7 +317,7 @@ function showImage(n) {
         opacity: 0
         , right: 0
     }), 0);
-    tlGlitch.kill();
+    tlGlitch.pause();
     setTimeout(function () {
         animate(imageIndex - 1);
     }, 100);
