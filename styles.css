@@ -2,6 +2,7 @@ body{
     margin: 0;
     background-color: #3F3E3E;
     user-select: none;
+    
 }
 
 h1 {
@@ -11,6 +12,7 @@ h1 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
+    transform: translateZ(80px);
 }
 h2 {
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
@@ -19,6 +21,7 @@ h2 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
+    transform: translateZ(120px);
 }
 h3 {
 	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
@@ -27,6 +30,7 @@ h3 {
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
+    transform: translateZ(60px);
 }
 .arrowshide{
     display: none;
@@ -51,6 +55,11 @@ h3 {
     right: 150px;
     top: 150px;
     width: 300px;
+    transform-style: preserve-3d;
+    transform: translateZ(0px);
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
 }
 
 #gotham-skyline{

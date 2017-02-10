@@ -144,7 +144,7 @@ function loadImages() {
     });
     imgLoad('svgs/spotlight.svg').then(function (response) {
         spotlight.src = window.URL.createObjectURL(response);
-        TweenLite.fromTo(spotlight, 0.1, {
+        TweenLite.fromTo(spotlight, 0.2, {
             rotation: 30
             , height: 0
         }, {
@@ -174,14 +174,44 @@ function loadImages() {
         
     }).then(function(){
         document.addEventListener("mousewheel",function(event){
-        if(event.deltaY == 125){
-            plusImage(1);
-        }
-            else{
+            if(event.deltaY > 0){
+                plusImage(1);
+            }
+            if(event.deltaY < 0){
                 plusImage(-1);
             }
-});
-    })
+        });
+        document.addEventListener("mousemove",function(event){
+            //console.log(event);
+            mouse.x = event.pageX;
+            mouse.y = event.pageY;
+
+            cancelAnimationFrame(request);
+            request = requestAnimationFrame(update);
+
+        });
+
+    });
+}
+
+function update(){
+    let dx = mouse.x - cx;
+    let dy = mouse.y - cy;
+
+    tiltx = -(dy / cy);
+    tilty = (dx / cx);
+    //console.log(tiltx+' '+tilty);
+    radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
+    degree = (radius * 10);
+    TweenLite.to(infoContainer[0], 0.5, {
+      transform: 'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)',
+      ease: Power2.easeOut
+    });
+}
+
+window.onresize = function(){
+    cx = window.innerWidth / 2;
+    cy = window.innerHeight / 2;
 }
 var gotham = document.getElementById('gotham-skyline');
 var batman = document.getElementById('batman');
@@ -191,9 +221,18 @@ var logotitle = document.getElementById('logoTitle');
 var description = document.getElementById('desc');
 var year = document.getElementById('year');
 var infoContainer = document.getElementsByClassName('info-container');
+var request = null;
+var mouse = {
+               x: 0,
+               y: 0
+            };
+var cx = window.innerWidth / 2;
+var cy = window.innerHeight / 2;
+
  var tlGlitch = new TimelineMax({
         repeat: -1
-        , repeatDelay: 5
+        , repeatDelay: 5,
+     
 });
 //console.log(bat);
 //batman.src = "svgs/bat1.svg";
@@ -237,13 +276,13 @@ function animate(n) {
         , opacity: 1
         , bottom: 50
         , left: 0
-    }),0).add(TweenLite.fromTo(infoContainer[0], 0.1, {
+    })).add(TweenLite.fromTo(infoContainer[0], 0.1, {
         opacity: 0
         , right: -20
     }, {
         opacity: 1
-        , right: 150
-    }), 0);
+        , right: 120
+    }));
     tlGlitch.restart();
    
     
@@ -270,7 +309,7 @@ function showImage(n) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     dots[imageIndex - 1].className += " active";
-    console.log(imageIndex);
+    //console.log(imageIndex);
     var tl2 = new TimelineLite();
     tl2.add(TweenLite.to(batman, 0.1, {
         rotation: 0
@@ -286,7 +325,7 @@ function showImage(n) {
         , opacity: 0
         , bottom: 50
         , left: 0
-    }),0).add(TweenLite.to(infoContainer, 0.1, {
+    }),0).add(TweenLite.to(infoContainer[0], 0.1, {
         opacity: 0
         , right: -20
     }), 0);
