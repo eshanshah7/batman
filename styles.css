@@ -1,41 +1,43 @@
 body{
+    font-family: "Play",sans-serif;
     margin: 0;
     background-color: black;
     user-select: none;
     overflow-y: hidden;
     
 }
-
+    
 h1 {
-	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 	font-size: 42px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(80px);
-    text-shadow: #FBB74B 0px 0px 8px;
+    text-shadow:  0 0 20px #FBB74B,0 0 40px #FBB74B, 0 0 70px #FBB74B, 0 0 80px #FBB74B;
+    
 }
 h2 {
-	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 	font-size: 28px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(120px);
-    text-shadow: #FBB74B 0px 0px 10px;
+    animation: neon5 1.5s ease-in-out infinite alternate;
+
+    
 }
 h3 {
-	font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
 	line-height: 26.4px;
     transform: translateZ(60px);
-    text-shadow: #FBB74B 0px 0px 8px;
+    text-shadow:  0 0 20px #FBB74B, 0 0 40px #FBB74B, 0 0 70px #FBB74B, 0 0 80px #FBB74B;
 }
+
 .arrowshide{
     display: none;
 }
@@ -81,7 +83,7 @@ h3 {
     left: 200px;
     height: 500px;
     width: 500px;
-    bottom: 0px;
+    bottom: 0px;    
 }
 
 #cloud{
@@ -166,10 +168,10 @@ h3 {
 
 .spotlight-box{
     position: absolute;
-    height: 200px;
+    height: 190px;
     width: 190px;
     left: 100px;
-    top:52px;
+    top:60px;
 }
 /* Next & previous buttons */
 
@@ -209,4 +211,12 @@ h3 {
     background-color: rgba(232,171,74, 0.8);
 }
 
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 40px #FBB74B, 0 0 70px #FBB74B, 0 0 80px #FBB74B, 0 0 100px #FBB74B;
+  }
+  to {
+    text-shadow: 0 0 20px #FBB74B, 0 0 35px #FBB74B, 0 0 40px #FBB74B, 0 0 50px #FBB74B;
+  }
+}
 
